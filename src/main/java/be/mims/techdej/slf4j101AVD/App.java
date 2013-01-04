@@ -1,5 +1,7 @@
 package be.mims.techdej.slf4j101AVD;
 
+import java.util.Iterator;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,6 +16,12 @@ public class App {
 	public static void main(String[] args) {
 		logger.info("App start");
 		System.out.println("Hello World!");
+		System.out.println("Affichage des 10 premiers nombres premiers");
+		NombresPremiers np = new NombresPremiers();
+		Iterator<Long> iter = np.iterator();
+		for (int i = 0; i < 10 && iter.hasNext(); i++) {
+			System.out.println(iter.next());
+		}
 		logger.info("App stop");
 	}
 }
