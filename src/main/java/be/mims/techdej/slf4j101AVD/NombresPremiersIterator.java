@@ -28,7 +28,7 @@ public class NombresPremiersIterator implements Iterator<Long> {
 	}
 
 	public boolean hasNext() {
-		boolean resultat = this.index < this.nombresPremiers.size();
+		boolean resultat = this.index > this.nombresPremiers.size();
 		logger.debug("index: {}; nombre de nombres premiers: {}; réponse: {}",
 				this.index, this.nombresPremiers.size(), resultat);
 		return resultat;
