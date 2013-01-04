@@ -35,7 +35,6 @@
                 <version>1.2.1</version>
                 <configuration>
                     <mainClass>be.mims.techdej.slf4j101AVD.App</mainClass>
-                    <classpathScope>runtime</classpathScope>
                 </configuration>
             </plugin>
         </plugins>
