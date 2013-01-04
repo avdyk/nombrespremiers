@@ -16,7 +16,26 @@ public class NombresPremiers implements Iterable<Long> {
 		logger.debug("construction d'un tableau de 10 nombres premiers");
 		this.nombresPremiers = new Long[10];
 		this.nombresPremiers[0] = 2L;
-		// FIXME recherche des dix premiers nombres premiers
+		// recherche des dix premiers nombres premiers
+		long nbr = 3L;
+		int i = 1;
+		logger.debug("recherche de {} nombres premiers",
+				this.nombresPremiers.length);
+		while (i < this.nombresPremiers.length) {
+			boolean premier = true;
+			int index = 0;
+			while (index < i && premier) {
+				premier = nbr % this.nombresPremiers[index] != 0;
+				logger.trace("{} est-il premier? {}", nbr, premier);
+				index++;
+			}
+			if (premier) {
+				this.nombresPremiers[i] = nbr;
+				i++;
+				logger.debug("nouveau nombre premier: {}", nbr);
+			}
+			nbr++;
+		}
 	}
 
 	public Long get(int index) {
