@@ -28,7 +28,7 @@ public class NombresPremiers implements Iterable<Long> {
 	}
 
 	public Iterator<Long> iterator() {
-		return null;
+		return new NombresPremiersIterator(this);
 	}
 
 }
