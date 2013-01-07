@@ -4,6 +4,8 @@ import java.util.Iterator;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
 
 public class NombresPremiers implements Iterable<Long> {
 
@@ -19,20 +21,21 @@ public class NombresPremiers implements Iterable<Long> {
 		// recherche des dix premiers nombres premiers
 		long nbr = 3L;
 		int i = 1;
-		logger.debug("recherche de {} nombres premiers",
+		Marker marker = MarkerFactory.getMarker("recherchePremiers");
+		logger.debug(marker, "recherche de {} nombres premiers",
 				this.nombresPremiers.length);
 		while (i < this.nombresPremiers.length) {
 			boolean premier = true;
 			int index = 0;
 			while (index < i && premier) {
 				premier = nbr % this.nombresPremiers[index] != 0;
-				logger.trace("{} est-il premier? {}", nbr, premier);
+				logger.trace(marker, "{} est-il premier? {}", nbr, premier);
 				index++;
 			}
 			if (premier) {
 				this.nombresPremiers[i] = nbr;
 				i++;
-				logger.debug("nouveau nombre premier: {}", nbr);
+				logger.debug(marker, "nouveau nombre premier: {}", nbr);
 			}
 			nbr++;
 		}
