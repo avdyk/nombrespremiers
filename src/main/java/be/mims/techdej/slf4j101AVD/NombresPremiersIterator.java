@@ -32,7 +32,7 @@ public class NombresPremiersIterator implements Iterator<Long> {
 	 * @return <code>true</code> s'il reste un nombre premier.
 	 */
 	public boolean hasNext() {
-		boolean resultat = this.index > this.nombresPremiers.size();
+		boolean resultat = this.index < this.nombresPremiers.size();
 		logger.debug("index: {}; nombre de nombres premiers: {}; réponse: {}",
 				this.index, this.nombresPremiers.size(), resultat);
 		return resultat;
