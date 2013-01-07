@@ -3,12 +3,10 @@
 	<!-- configuration pour jmx -->
 	<!-- <jmxConfigurator /> -->
 
-    <!--
 	<turboFilter class="ch.qos.logback.classic.turbo.MarkerFilter">
 		<Marker>recherchePremiers</Marker>
 		<OnMatch>ACCEPT</OnMatch>
 	</turboFilter>
-    -->
 
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
